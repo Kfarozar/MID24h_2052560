@@ -7,7 +7,10 @@
 #include "input_reading.h"
 #include "main.h"
 
-int TimeOutForKeyPress =  300;
+int TimeOutForKeyPress1 =  300;
+int TimeOutForKeyPress2 =  300;
+int TimeOutForKeyPress3 =  300;
+
 int button1_flag = 0;
 int button2_flag = 0;
 int button3_flag = 0;
@@ -49,14 +52,14 @@ void getKeyInput1(){
     if (KeyReg2 != KeyReg3){
       KeyReg3 = KeyReg2;
       if (KeyReg3 == PRESSED_STATE){
-        TimeOutForKeyPress = 300;
+        TimeOutForKeyPress1 = 300;
         button1_flag = 1;
       }
     } else{
-    	TimeOutForKeyPress--;
-		if (TimeOutForKeyPress == 0){
+    	TimeOutForKeyPress1--;
+		if (TimeOutForKeyPress1 == 0){
 			if (KeyReg3 == PRESSED_STATE){
-				TimeOutForKeyPress = 100;
+				TimeOutForKeyPress1 = 100;
 				button1_flag = 1;
 			 }
 			//KeyReg3 = NORMAL_STATE;
@@ -77,14 +80,14 @@ void getKeyInput2(){
     if (KeyReg22 != KeyReg32){
       KeyReg32 = KeyReg22;
       if (KeyReg32 == PRESSED_STATE){
-        TimeOutForKeyPress = 300;
+        TimeOutForKeyPress2 = 300;
         button2_flag = 1;
       }
     } else{
-    	TimeOutForKeyPress--;
-		if (TimeOutForKeyPress == 0){
+    	TimeOutForKeyPress2--;
+		if (TimeOutForKeyPress2 == 0){
 			if (KeyReg32 == PRESSED_STATE){
-				TimeOutForKeyPress = 100;
+				TimeOutForKeyPress2 = 100;
 				button2_flag = 1;
 			 }
 			//KeyReg3 = NORMAL_STATE; // nếu không cần xử lý nhấn đè
@@ -105,14 +108,14 @@ void getKeyInput3(){
     if (KeyReg23 != KeyReg33){
       KeyReg33 = KeyReg23;
       if (KeyReg33 == PRESSED_STATE){
-        TimeOutForKeyPress = 300;
+        TimeOutForKeyPress3 = 300;
         button3_flag = 1;
       }
     } else{
-    	TimeOutForKeyPress--;
-		if (TimeOutForKeyPress == 0){
+    	TimeOutForKeyPress3--;
+		if (TimeOutForKeyPress3 == 0){
 			if (KeyReg33 == PRESSED_STATE){
-				TimeOutForKeyPress = 100;
+				TimeOutForKeyPress3 = 100;
 				button3_flag = 1;
 			 }
 			KeyReg3 = NORMAL_STATE;
